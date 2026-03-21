@@ -21,7 +21,10 @@ from django.urls import include
 
 urlpatterns = [
 
+    #path('', views.home,name="home"),
     path('',include('first_app.urls')),
-    path('admin/', admin.site.urls),
+    path('search/', views.search,name="search"),
+    path('about/', views.about,name="about"),
+    path('admin/', admin.site.urls)
 ]
 

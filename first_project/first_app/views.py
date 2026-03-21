@@ -1,20 +1,18 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+my_dict = {'insert_me': "Hello I am from views.py!"}
 
 def index(request):
-    return HttpResponse("Hello World!")
-
+    return render(request,'first_app/index.html')
 def home(request):
-    return HttpResponse("Welcome to home page!")
+    return render(request,'first_app/home.html')
+
+def search(request):
+    return render(request,'first_app/search.html')
+
+def about(request):
+    return render(request,'first_app/about.html')
 
 def educative(request):
-    return HttpResponse("Welcome to Educative page!")
-
-def show_age(request, age):
-    return HttpResponse("I am %s years old." % age)
-
-def even_or_odd(request, num):
-    if(num%2==0):
-        output="%s is an even number." % num
-    else:
-        output="%s is an odd number." % num
-    return HttpResponse(output)
+    return render(request, 'first_app/educative.html')
